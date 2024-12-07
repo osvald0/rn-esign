@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
-import {Modal, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
-import {ImageFormat, makeImageFromView} from '@shopify/react-native-skia';
+import React, { useRef } from 'react';
+import { Modal, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { ImageFormat, makeImageFromView } from '@shopify/react-native-skia';
 import useSign from '../hooks/use-sign';
 import Sign from './sign';
 
@@ -11,8 +11,8 @@ type Props = {
 };
 
 export default function SignModal(props: Props) {
-  const {isOpen, onSetIsOpen, onAccept} = props;
-  const {pan, paths, currentPath, setPaths} = useSign();
+  const { isOpen, onSetIsOpen, onAccept } = props;
+  const { pan, paths, currentPath, setPaths } = useSign();
   const viewRef = useRef(null);
 
   async function handleAccept() {
@@ -50,7 +50,7 @@ export default function SignModal(props: Props) {
           <View style={styles.buttonsContainer}>
             <TouchableOpacity
               onPress={handleCancel}
-              style={{...styles.button, ...styles.cancelButton}}>
+              style={{ ...styles.button, ...styles.cancelButton }}>
               <Text style={styles.buttonText}>Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -59,7 +59,7 @@ export default function SignModal(props: Props) {
               style={{
                 ...styles.button,
                 ...styles.acceptButton,
-                ...(paths.length <= 0 && {...styles.disabledButton}),
+                ...(paths.length <= 0 && { ...styles.disabledButton }),
               }}>
               <Text style={styles.buttonText}>Accept</Text>
             </TouchableOpacity>
