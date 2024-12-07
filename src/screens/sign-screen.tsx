@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   TouchableOpacity,
   SafeAreaView,
@@ -18,7 +18,7 @@ export default function SignScreen(): React.JSX.Element {
       <SafeAreaView style={styles.container}>
         <View style={styles.signatureContainer}>
           {currentSignature ? (
-            <Image source={{uri: currentSignature}} style={styles.image} />
+            <Image style={styles.image} source={{ uri: currentSignature }} />
           ) : (
             <Text style={styles.signaturePlaceholder}>
               No current signature

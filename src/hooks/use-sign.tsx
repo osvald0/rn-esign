@@ -1,7 +1,7 @@
-import {useState} from 'react';
-import {runOnJS} from 'react-native-reanimated';
-import {Gesture} from 'react-native-gesture-handler';
-import {SkPath, Skia} from '@shopify/react-native-skia';
+import { useState } from 'react';
+import { runOnJS } from 'react-native-reanimated';
+import { Gesture } from 'react-native-gesture-handler';
+import { SkPath, Skia } from '@shopify/react-native-skia';
 
 export default function useSign() {
   const [paths, setPaths] = useState<Array<SkPath>>([]);
@@ -23,16 +23,16 @@ export default function useSign() {
 
   const onDrawingFinished = () => {
     if (currentPath) {
-      setPaths(prevPaths => [...prevPaths, currentPath]);
+      setPaths((prevPaths) => [...prevPaths, currentPath]);
       setCurrentPath(null);
     }
   };
 
   const pan = Gesture.Pan()
-    .onStart(event => {
+    .onStart((event) => {
       runOnJS(onDrawingStart)(event.x, event.y);
     })
-    .onUpdate(event => {
+    .onUpdate((event) => {
       runOnJS(onDrawingActive)(event.x, event.y);
     })
     .onEnd(() => {

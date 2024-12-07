@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Canvas, Path, SkPath} from '@shopify/react-native-skia';
-import {GestureDetector, PanGesture} from 'react-native-gesture-handler';
+import { StyleSheet } from 'react-native';
+import { Canvas, Path, SkPath } from '@shopify/react-native-skia';
+import { GestureDetector, PanGesture } from 'react-native-gesture-handler';
 
 type Props = {
   pan: PanGesture;
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Sign(props: Props) {
-  const {pan, paths, currentPath} = props;
+  const { pan, paths, currentPath } = props;
 
   return (
     <GestureDetector gesture={pan}>
