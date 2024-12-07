@@ -35,6 +35,7 @@ export default function SignModal(props: Props) {
 
   return (
     <Modal
+      testID="modal"
       visible={isOpen}
       transparent={true}
       animationType="slide"
@@ -54,6 +55,7 @@ export default function SignModal(props: Props) {
               <Text style={styles.buttonText}>Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity
+              testID="accept-button"
               onPress={handleAccept}
               disabled={paths.length <= 0}
               style={{
